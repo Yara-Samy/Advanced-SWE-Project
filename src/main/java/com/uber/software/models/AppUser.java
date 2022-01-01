@@ -11,8 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.time.LocalDate;
 
-//@Getter
-//@Setter
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -28,7 +28,7 @@ public class AppUser {
     private String username;
     private String password;
     private String email;
-   // private LocalDate dateOfBirth;
+   private LocalDate dateOfBirth;
     private UserRole role;
     private float avgRate;
 
