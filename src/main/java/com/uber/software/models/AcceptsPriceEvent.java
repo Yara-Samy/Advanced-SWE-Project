@@ -3,15 +3,19 @@ package com.uber.software.models;
 import com.uber.software.enums.EventName;
 import com.uber.software.services.EventService;
 
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
+import java.time.LocalTime;
 
 public class AcceptsPriceEvent extends Event{
-    private String UserName;
+    private String Username;
 
-    public AcceptsPriceEvent(ZonedDateTime eventTime, Integer rideID, String userName) {
-        super(EventName.UserAcceptsPrice, eventTime, rideID);
-        UserName = userName;
-        EventService.notify((org.w3c.dom.events.Event) this);
+    public AcceptsPriceEvent( Integer rideID, String Username) {
+        super(EventName.UserAcceptsPrice, LocalTime.now(), rideID);
+        this.Username = Username;
+        EventService.updateEvents(this);
+    }
+
+    @Override
+    public String tostring() {
+        return "rideID: "+this.rideID+"\neventName: "+this.eventName+"\neventTime: "+this.eventTime+"\nUsername: "+this.Username+"\n";
     }
 }
