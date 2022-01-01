@@ -11,8 +11,7 @@ public class AcceptsPriceEvent extends Event{
     public AcceptsPriceEvent( Integer rideID, String Username) {
         super(EventName.UserAcceptsPrice, LocalTime.now(), rideID);
         this.Username = Username;
-        EventService.eventList.add(this);
-        //EventService.updateEvents(this);
+        EventService.updateEvents(this);
     }
 
     @Override

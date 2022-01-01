@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping()
+@RequestMapping("/users")
 public class AppUserController {
     private final AppUserService appUserService;
     private final EventService eventService;
