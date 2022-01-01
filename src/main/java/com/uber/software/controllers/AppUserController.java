@@ -34,6 +34,8 @@ public class AppUserController {
         return appUserService.addUser(user);
     }
 
+    /*
+    //test function for events but will not be needed in real implementation
     @PostMapping ("/accept/{id}/{username}")
     @ResponseBody
     public String addEvent(@PathVariable Integer id,@PathVariable String username) {
@@ -44,7 +46,7 @@ public class AppUserController {
     public String desevent(@RequestBody DestinationEvent event) {
 
         return "new des event";
-    }
+    }*/
 
 
 
