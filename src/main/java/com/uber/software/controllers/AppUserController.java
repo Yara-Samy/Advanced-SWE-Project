@@ -1,16 +1,15 @@
 package com.uber.software.controllers;
 
-import com.uber.software.models.AppUser;
+import com.uber.software.models.*;
 import com.uber.software.services.AppUserService;
 import com.uber.software.services.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.w3c.dom.events.Event;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping()
 public class AppUserController {
     private final AppUserService appUserService;
     private final EventService eventService;
@@ -35,8 +34,22 @@ public class AppUserController {
         return appUserService.addUser(user);
     }
 
-   /* @GetMapping("/events/{id}")//admin method
-    public List<Event> showRideEvents(@PathVariable Integer id){
+    @PostMapping ("/accept/{id}/{username}")
+    @ResponseBody
+    public String addEvent(@PathVariable Integer id,@PathVariable String username) {
+        new AcceptsPriceEvent(id,username);
+        return "new accept event";
+    }
+    @PostMapping("/des")
+    public String desevent(@RequestBody DestinationEvent event) {
+
+        return "new des event";
+    }
+
+
+
+    @GetMapping("/events/{id}")//admin method
+    public List<String> showRideEvents(@PathVariable Integer id){
         return eventService.rideEvents(id);
-    }*/
+    }
 }

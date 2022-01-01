@@ -1,19 +1,18 @@
 package com.uber.software.models;
 
 import com.uber.software.enums.EventName;
-import org.springframework.stereotype.Component;
 
-import java.time.ZonedDateTime;
+import java.time.LocalTime;
 
 
 public abstract class Event {
 
 
     protected EventName eventName;
-    protected ZonedDateTime eventTime;
+    protected LocalTime eventTime;
     protected Integer rideID;
 
-    public Event(EventName eventName, ZonedDateTime eventTime, Integer rideID) {
+    public Event(EventName eventName, LocalTime eventTime, Integer rideID) {
         this.eventName = eventName;
         this.eventTime = eventTime;
         this.rideID = rideID;
@@ -25,14 +24,14 @@ public abstract class Event {
         return eventName;
     }
 
-    public ZonedDateTime getEventTime() {
+    public LocalTime getEventTime() {
         return eventTime;
     }
 
     public Integer getRideID() {
         return rideID;
     }
-    public void hello(){
 
-    }
+    public abstract String tostring();
+
 }
