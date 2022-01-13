@@ -8,8 +8,10 @@ public class Driver extends User {
     private String nationalID;
     private ArrayList<String> favoriteAreas;
     private double avgRate;
+    private int a;
     private int totalRates,rateCounts;
     private int isVerified;
+    
 
 
     public Driver(String username, String password, String phoneNumber, String email, String drivingLicence, String nationalID, int isSuspended, int isVerified, int totalRates, int rateCounts, double avgRate) {
