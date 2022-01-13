@@ -6,6 +6,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+
+
 public class AddAreaBox {
 
     private static Stage stage;
